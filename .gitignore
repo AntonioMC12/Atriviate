@@ -20,7 +20,7 @@
 *.rar
 
 #README media
-/images
+#/images
 
 ##############################
 ## Eclipse

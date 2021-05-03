@@ -37,7 +37,7 @@
   </a>
 
   <h3 align="center">Atriviate</h3>
-  <h2 align="center">EN DESARROLLO<h2>
+  <h2 align="center">EN DESARROLLO</h2>
 
   <p align="center">
     Es una pequeña aplicación desarrollada en java, que se conecta a una base de datos MySQL y cuya interfaz gráfica está desarrollada con JavaFX
@@ -87,6 +87,7 @@
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Atriviate][images/Trivial_Flowchart.svg]]()
 
 Esta aplicación está desarrollada para la asignatura de Programación del ciclo superior de Desarrollo de Aplicaciones Multiplataforma del instituto
 <a href="https://github.com/ies-franciscodelosrios">I.E.S Francisco de los Ríos</a>
@@ -94,6 +95,19 @@ Esta aplicación está desarrollada para la asignatura de Programación del cicl
 Consiste en un juego de preguntas y respuestas que incluye un CRUD para crear, editar, borrar y leer las preguntas de una base de datos, teniendo un 
 ranking de usuarios regido por el puntuaje obtenido al superar las preguntas.
 
+El diagrama de flujo sería el siguiente
+
+  <a href="https://github.com/ErTonix12/Atriviate">
+    <img src="images/Trivial_Flowchart.svg">
+    <h6>Flowchart</h6>
+  </a>
+
+El diagrama de clases sería el siguiente
+
+  <a href="https://github.com/ErTonix12/Atriviate">
+    <img src="images/Class_Diagram.svg">
+    <h6>Class Diagram</h6>
+  </a>
 
 ### Built With
 Java with Maven
@@ -120,8 +134,7 @@ Java 1.8 o superior
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
+   git clone https://github.com/ErTonix12/Atriviate.git
 2. run the jar
    ```sh
    java -jar ejecutable.jar
