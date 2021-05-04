@@ -5,19 +5,11 @@
  * La clase sigue el patrón singleton 
  */
 
-package es.antoniomc.Atriviate.model;
+package es.antoniomc.Atriviate.interfaces;
 
 import java.util.List;
 
 public interface IPreguntaDAO  extends IPregunta{
-  
-  public void setListaPreguntas(List<IPregunta> lista);
-  
-  /**
-   * Método que devuelve la única instancia de la clase o si no existe, crea la instancia
-   * 
-   * @return instancia de la clase
-   */
   
   /**
    * Método que devuelve true si la pregunta se ha insertado en la lista correctamente
@@ -25,7 +17,7 @@ public interface IPreguntaDAO  extends IPregunta{
    * @param question
    * @return booelan
    */
-  public boolean addQuestion(IPregunta question);
+  public boolean addPregunta(IPregunta question);
   
   /**
    * Método que devuelve true si la pregunta se ha eliminado de la lista correctamente
@@ -33,15 +25,15 @@ public interface IPreguntaDAO  extends IPregunta{
    * @param posicion de la pregunta en la lista
    * @return booelan
    */
-  public boolean deleteQuestion(int position);
+  public boolean deletePregunta(int position);
   
   /**
-   * Método que devuelve la posicion de la pregunta en el array si la encuentra
+   * Método que devuelve la lista de todas las preguntas
    * 
-   * @param question que será utilizado como expresion regular para buscar en las preguntas
-   * @return posicion de la pregunta, -1 si no la encuentra.
+   * 
+   * @return Lista de preguntas
    */
-  public int searchQuestion(String question);
+  public List<IPregunta> getPreguntas();
   
   /**
    * Método que filtra las preguntas por categoría y las devuelve en una lista de preguntas.
@@ -49,8 +41,10 @@ public interface IPreguntaDAO  extends IPregunta{
    * @param category
    * @return lista de preguntas.
    */
-  public List<IPregunta> getQuestionsByCategory(String category);
+  public List<IPregunta> getPreguntasByCategory(String category);
   
+  /**
+   * Método que guarda o actualiza una entrada en la base de datos.
+   */
   public void save();
-  public void load();
 }
