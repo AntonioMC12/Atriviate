@@ -86,9 +86,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-[![Atriviate][images/Trivial_Flowchart.svg]]()
-
 Esta aplicación está desarrollada para la asignatura de Programación del ciclo superior de Desarrollo de Aplicaciones Multiplataforma del instituto
 <a href="https://github.com/ies-franciscodelosrios">I.E.S Francisco de los Ríos</a>
 
@@ -200,15 +197,15 @@ Project Link: [https://github.com/ErTonix12/Atriviate](https://github.com/ErToni
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/ErTonix12/Atriviate.svg?style=for-the-badge
+[contributors-url]: https://github.com/ErTonix12/Atriviate/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/ErTonix12/Atriviate.svg?style=for-the-badge
+[forks-url]: https://github.com/ErTonix12/Atriviate/network/members
+[stars-shield]: https://img.shields.io/github/stars/ErTonix12/Atriviate.svg?style=for-the-badge
+[stars-url]: https://github.com/ErTonix12/Atriviate/stargazers
+[issues-shield]: https://img.shields.io/github/issues/ErTonix12/Atriviate.svg?style=for-the-badge
+[issues-url]: https://github.com/ErTonix12/Atriviate/issues
+[license-shield]: https://img.shields.io/github/license/ErTonix12/Atriviate.svg?style=for-the-badge
+[license-url]: https://github.com/ErTonix12/Atriviate/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/github_username
