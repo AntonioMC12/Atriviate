@@ -1,6 +1,7 @@
 package es.antoniomc.Atriviate.model;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -8,10 +9,14 @@ import java.sql.Statement;
 import es.antoniomc.Atriviate.interfaces.IUsuario;
 import es.antoniomc.Atriviate.interfaces.IUsuarioDAO;
 import es.antoniomc.Atriviate.utils.conexion;
+import es.antoniomc.Atriviate.utils.encoder;
 
 public class UsuarioDAO extends Usuario implements IUsuarioDAO {
 
   private final static String GETBYDNI = "SELECT id,nombre,password,puntos FROM Usuario WHERE nombre=";
+  private final static String INSERTUPDATE = "INSERT INTO Usuario (nombre, password, puntos)"
+                                           + "VALUES (?,?,?)"
+                                           + "ON DUPLICATE KEY UPDATE puntos=?";
 
   public UsuarioDAO(double id, String nombre, String password, double puntos) {
     super(id, nombre, password,puntos);
@@ -71,8 +76,26 @@ public class UsuarioDAO extends Usuario implements IUsuarioDAO {
 
   @Override
   public int save() {
-    // TODO Auto-generated method stub
-    return 0;
+    // INSERT o UPDATE
+    //INSERT -> si no existe OK
+    //En caso de ERROR -> hago un update
+    int rs=0;
+    Connection con = conexion.getConexion();
+    if (con != null) {
+      try {
+        PreparedStatement q=con.prepareStatement(INSERTUPDATE);
+        q.setString(1, this.nombre);
+        q.setString(2, encoder.encrypt(this.password));
+        q.setDouble(3, this.puntos);
+        q.setDouble(4, this.puntos);
+
+        rs =q.executeUpdate();    
+      } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+    }
+    return rs;
   }
 
 }

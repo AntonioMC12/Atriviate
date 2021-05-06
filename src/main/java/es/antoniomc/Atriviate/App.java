@@ -8,10 +8,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
-
 import es.antoniomc.Atriviate.model.Usuario;
 import es.antoniomc.Atriviate.model.UsuarioDAO;
-
 import es.antoniomc.Atriviate.utils.encoder;
 
 /**
@@ -23,7 +21,7 @@ public class App extends Application {
 
   @Override
   public void start(Stage stage) throws IOException {
-    scene = new Scene(loadFXML("primary"), 640, 480);
+    scene = new Scene(loadFXML("Login"), 640, 480);
     stage.setScene(scene);
     stage.show();
   }
@@ -38,21 +36,21 @@ public class App extends Application {
   }
 
   public static void main(String[] args) {
-    // launch();
-    Usuario test = new UsuarioDAO("Antonio");
-    System.out.println(test);
-    String password = "abcd1234";
-    try {
-      String hash = encoder.encrypt(password);
-      System.out.println("La contraseña encriptada es:" + "\n" + hash);
-      String hash2 = encoder.encrypt(password);
-      if(hash.equals(hash2)) {
-        System.out.println("La contraseña coincide");
-      }
-    } catch (NoSuchAlgorithmException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
+    launch();
+    // la contraseña de paco es 1234abc   
+    /*
+    UsuarioDAO test1 = new UsuarioDAO("Yisus","1234abc",0);
+    if(test1.save()!=-1) {
+      System.out.println("Guardado correcto!");
     }
-
+    
+    
+    Usuario test = new UsuarioDAO("Yisus");
+    if(encoder.matchPass("1234abc", test.getPassword())) {
+      System.out.println("La contraseña coincide!");
+    }else {
+      System.out.println("No coincide");
+    }
+    */
   }
 }

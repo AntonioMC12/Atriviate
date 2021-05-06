@@ -1,19 +1,14 @@
 package es.antoniomc.Atriviate.utils;
 
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import org.mindrot.jbcrypt.BCrypt;
 
 public class encoder {
-  
-  public static String encrypt(String texto) throws NoSuchAlgorithmException {
-    String encrypt = "";
-    
-    MessageDigest digest = MessageDigest.getInstance("SHA-256");
-    byte[] hash = digest.digest(texto.getBytes(StandardCharsets.UTF_8));
-    encrypt = new String(hash,StandardCharsets.UTF_8);
-    
-    return encrypt;
+
+  public static String encrypt(String texto) {
+    return BCrypt.hashpw(texto, BCrypt.gensalt());
   }
 
+  public static boolean matchPass(String plainPassword, String hashedPassword) {
+    return BCrypt.checkpw(plainPassword, hashedPassword);
+  }
 }
