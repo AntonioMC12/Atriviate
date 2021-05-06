@@ -28,26 +28,22 @@ public class LoginController {
 
   @FXML
   public void Login(ActionEvent event) {
-    boolean correct = false;
     Alert alert = new Alert(AlertType.ERROR);
 
-    while (!correct) {
+    String nombre = this.txtUsuarioNombre.getText();
+    String pass = this.txtUsuarioPassword.getText();
 
-      String nombre = this.txtUsuarioNombre.getText();
-      String pass = this.txtUsuarioPassword.getText();
-
-      if (correct = checkFields(nombre, pass)) {
-        System.out.println("Check In correcto!");
-      } else {
-        this.txtUsuarioNombre.clear();
-        this.txtUsuarioPassword.clear();
-        alert.setHeaderText(null);
-        alert.setTitle("Error");
-        alert.setContentText("Has introducido mal algun dato");
-        alert.showAndWait();
-      }
-
+    if (checkFields(nombre, pass)) {
+      System.out.println("Check In correcto!");
+    } else {
+      this.txtUsuarioNombre.clear();
+      this.txtUsuarioPassword.clear();
+      alert.setHeaderText(null);
+      alert.setTitle("Error");
+      alert.setContentText("Has introducido mal algun dato");
+      alert.showAndWait();
     }
+
   }
 
   @FXML
