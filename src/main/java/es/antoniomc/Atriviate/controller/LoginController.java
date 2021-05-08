@@ -1,17 +1,22 @@
 package es.antoniomc.Atriviate.controller;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.io.IOException;
 
+import es.antoniomc.Atriviate.App;
 import es.antoniomc.Atriviate.model.UsuarioDAO;
 import es.antoniomc.Atriviate.utils.encoder;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class LoginController {
 
@@ -21,41 +26,72 @@ public class LoginController {
   private PasswordField txtUsuarioPassword;
   @FXML
   private Button LoginButton;
+  @FXML
+  private Button CreateUserButton;
 
   @FXML
-  public void initialize(URL url, ResourceBundle rb) {
+  public void initialize() {
   }
 
   @FXML
   public void Login(ActionEvent event) {
-    Alert alert = new Alert(AlertType.ERROR);
 
     String nombre = this.txtUsuarioNombre.getText();
     String pass = this.txtUsuarioPassword.getText();
 
     if (checkFields(nombre, pass)) {
       System.out.println("Check In correcto!");
+      try {
+        App.setRoot("primary");
+      } catch (IOException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
     } else {
-      this.txtUsuarioNombre.clear();
-      this.txtUsuarioPassword.clear();
-      alert.setHeaderText(null);
-      alert.setTitle("Error");
-      alert.setContentText("Has introducido mal algun dato");
-      alert.showAndWait();
+      showError("Has introducido mal algún dato");
     }
-
   }
 
   @FXML
   public boolean checkFields(String nombre, String pass) {
     boolean check = false;
 
-    if (nombre != null && nombre != "" && pass != null && pass != "") {
+    if (!this.txtUsuarioNombre.getText().trim().isEmpty() && !this.txtUsuarioPassword.getText().trim().isEmpty()) {
       UsuarioDAO usuario = new UsuarioDAO(nombre);
       if (usuario != null && usuario.getPassword() != null && usuario.getId() != -1) {
         check = encoder.matchPass(pass, usuario.getPassword());
       }
     }
     return check;
+  }
+
+  @FXML
+  public void createUser(ActionEvent event) {
+    FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("CreateUser.fxml"));
+    Parent modal;
+    try {
+      modal = fxmlLoader.load();
+      Stage modalStage = new Stage();
+      modalStage.initModality(Modality.APPLICATION_MODAL);
+      modalStage.initOwner(App.rootstage);
+      Scene modalScene = new Scene(modal);
+      modalStage.setScene(modalScene);
+      modalStage.showAndWait();
+      modalStage.setResizable(false);
+    } catch (IOException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+  }
+
+  @FXML
+  public void showError(String text) {
+    Alert alert = new Alert(AlertType.ERROR);
+    this.txtUsuarioNombre.clear();
+    this.txtUsuarioPassword.clear();
+    alert.setHeaderText(null);
+    alert.setTitle("Error");
+    alert.setContentText(text);
+    alert.showAndWait();
   }
 }

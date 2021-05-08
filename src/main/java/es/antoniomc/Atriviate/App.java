@@ -18,6 +18,7 @@ import es.antoniomc.Atriviate.utils.encoder;
 public class App extends Application {
 
   private static Scene scene;
+  public static Stage rootstage;
 
   @Override
   public void start(Stage stage) throws IOException {

@@ -35,5 +35,6 @@
       <TextField fx:id="txtUsuarioNombre" layoutX="215.0" layoutY="129.0" promptText="Nombre de Usuario" />
       <PasswordField fx:id="txtUsuarioPassword" layoutX="215.0" layoutY="188.0" promptText="Contraseña" />
       <Button fx:id="LoginButton" layoutX="270.0" layoutY="257.0" mnemonicParsing="false" onAction="#Login" text="Login" />
+      <Button fx:id="CreateUserButton" layoutX="470.0" layoutY="347.0" mnemonicParsing="false" onAction="#createUser" text="Crear Usuario" />
    </children>
 </AnchorPane>
