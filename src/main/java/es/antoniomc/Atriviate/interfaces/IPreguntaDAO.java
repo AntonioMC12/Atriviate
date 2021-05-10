@@ -9,6 +9,8 @@ package es.antoniomc.Atriviate.interfaces;
 
 import java.util.List;
 
+import es.antoniomc.Atriviate.model.Pregunta;
+
 public interface IPreguntaDAO  extends IPregunta{
   
   /**
@@ -33,7 +35,7 @@ public interface IPreguntaDAO  extends IPregunta{
    * 
    * @return Lista de preguntas
    */
-  public List<IPregunta> getPreguntas();
+  public List<Pregunta> getPreguntas();
   
   /**
    * Método que filtra las preguntas por categoría y las devuelve en una lista de preguntas.
@@ -41,7 +43,7 @@ public interface IPreguntaDAO  extends IPregunta{
    * @param category
    * @return lista de preguntas.
    */
-  public List<IPregunta> getPreguntasByCategory(String category);
+  public List<Pregunta> getPreguntasByCategory(String category);
   
   /**
    * Método que guarda o actualiza una entrada en la base de datos.

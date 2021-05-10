@@ -6,10 +6,10 @@ import es.antoniomc.Atriviate.interfaces.IPregunta;
 
 public class Pregunta implements IPregunta {
 
-  private double id;
-  private String categoria;
+  protected double id;
+  protected String categoria;
   protected List<Respuesta> respuestas;
-  private String texto;
+  protected String texto;
 
   public Pregunta(double id, String categoria, List<Respuesta> respuestas, String texto) {
     super();
@@ -25,6 +25,10 @@ public class Pregunta implements IPregunta {
   
   public Pregunta(double id) {
     this(id,"",null,"");
+  }
+  
+  public Pregunta() {
+    this(-1,"",null,"");
   }
 
   public String getCategoria() {

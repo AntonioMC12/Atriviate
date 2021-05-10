@@ -65,6 +65,7 @@ public class UsuarioDAO extends Usuario implements IUsuarioDAO {
     return false;
   }
 
+  @SuppressWarnings("exports")
   @Override
   public IUsuario getUsuario(String name) {
     // TODO Auto-generated method stub

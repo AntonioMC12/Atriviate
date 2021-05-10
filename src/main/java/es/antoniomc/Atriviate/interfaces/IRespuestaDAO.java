@@ -1,5 +1,7 @@
 package es.antoniomc.Atriviate.interfaces;
 
+import es.antoniomc.Atriviate.model.Respuesta;
+
 public interface IRespuestaDAO {
   /**
    * Método que devuelve true si la respuesta se ha insertado en la lista
@@ -8,7 +10,7 @@ public interface IRespuestaDAO {
    * @param respuesta
    * @return booelan
    */
-  public boolean addRespuesta(IRespuesta respuesta);
+  public boolean addRespuesta(Respuesta respuesta);
 
   /**
    * Método que devuelve true si la respuesta se ha eliminado de la lista

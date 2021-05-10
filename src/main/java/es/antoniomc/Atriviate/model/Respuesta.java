@@ -4,10 +4,10 @@ import es.antoniomc.Atriviate.interfaces.IRespuesta;
 
 public class Respuesta implements IRespuesta{
   
-  private double id;
-  private Pregunta pregunta;
-  private String texto;
-  private boolean correcta;
+  protected double id;
+  protected Pregunta pregunta;
+  protected String texto;
+  protected boolean correcta;
   
   
   

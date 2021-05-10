@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import es.antoniomc.Atriviate.App;
 import es.antoniomc.Atriviate.model.UsuarioDAO;
+import es.antoniomc.Atriviate.model.usuarioHolder;
 import es.antoniomc.Atriviate.utils.encoder;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,6 +32,7 @@ public class LoginController {
 
   @FXML
   public void initialize() {
+
   }
 
   @FXML
@@ -38,9 +40,13 @@ public class LoginController {
 
     String nombre = this.txtUsuarioNombre.getText();
     String pass = this.txtUsuarioPassword.getText();
+    usuarioHolder holder = usuarioHolder.getInstance();
 
     if (checkFields(nombre, pass)) {
       System.out.println("Check In correcto!");
+      UsuarioDAO usuario = new UsuarioDAO(nombre);
+      holder.setUser(usuario);
+      
       try {
         App.setRoot("primary");
       } catch (IOException e) {
@@ -94,4 +100,5 @@ public class LoginController {
     alert.setContentText(text);
     alert.showAndWait();
   }
+
 }

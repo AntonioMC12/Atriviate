@@ -8,27 +8,25 @@ public class Usuario implements IUsuario {
   protected String nombre;
   protected double puntos;
   protected String password;
-  
-  
 
-  public Usuario(double id,String nombre,String password, double puntos) {
+  public Usuario(double id, String nombre, String password, double puntos) {
     super();
     this.id = id;
     this.nombre = nombre;
     this.password = password;
     this.puntos = puntos;
   }
-  
+
   public Usuario(String nombre, String password, double puntos) {
-    this(-1,nombre,password,puntos);
+    this(-1, nombre, password, puntos);
   }
-  
+
   public Usuario(String nombre) {
-    this(-1,nombre,"",0);
+    this(-1, nombre, "", 0);
   }
-  
+
   public Usuario() {
-    this(-1,"","",0);
+    this(-1, "", "", 0);
   }
 
   public double getId() {
@@ -68,6 +66,23 @@ public class Usuario implements IUsuario {
   public String toString() {
     return "Usuario [id=" + id + ", nombre=" + nombre + ", puntos=" + puntos + "]";
   }
-  
-  
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (!getClass().isInstance(obj))
+      return false;
+    Usuario other = (Usuario) obj;
+    if (Double.doubleToLongBits(id) != Double.doubleToLongBits(other.id))
+      return false;
+    if (nombre == null) {
+      if (other.nombre != null)
+        return false;
+    } else if (!nombre.equals(other.nombre))
+      return false;
+    return true;
+  }
 }
