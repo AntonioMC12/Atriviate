@@ -1,12 +1,14 @@
 package es.antoniomc.Atriviate.interfaces;
 
+import es.antoniomc.Atriviate.model.Pregunta;
+
 public interface IRespuesta {
 
   public void setCorrecta(boolean correcta);
 
   public void setTexto(String question);
 
-  public void setPregunta(IPregunta pregunta);
+  public void setPregunta(Pregunta pregunta);
 
   public IPregunta getPregunta();
 
@@ -14,6 +16,6 @@ public interface IRespuesta {
 
   public String getTexto();
 
-  public boolean getCorrecta();
+  public boolean isCorrecta();
 
 }

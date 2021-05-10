@@ -11,14 +11,10 @@ import java.util.List;
 import es.antoniomc.Atriviate.interfaces.IUsuario;
 import es.antoniomc.Atriviate.interfaces.IUsuarioDAO;
 import es.antoniomc.Atriviate.utils.conexion;
+import es.antoniomc.Atriviate.utils.consultas;
 import es.antoniomc.Atriviate.utils.encoder;
 
 public class UsuarioDAO extends Usuario implements IUsuarioDAO {
-
-  private final static String GETBYNOMBRE = "SELECT id,nombre,password,puntos FROM Usuario WHERE nombre=";
-  private final static String INSERTUPDATE = "INSERT INTO Usuario (nombre, password, puntos)" + "VALUES (?,?,?)"
-      + "ON DUPLICATE KEY UPDATE puntos=?";
-  private final static String SELECTNOMBRE = "SELECT nombre FROM Usuario";
 
   public UsuarioDAO(double id, String nombre, String password, double puntos) {
     super(id, nombre, password, puntos);
@@ -48,7 +44,7 @@ public class UsuarioDAO extends Usuario implements IUsuarioDAO {
     if (con != null) {
       try {
         Statement st = con.createStatement();
-        String q = GETBYNOMBRE + "'" + nombre + "'";
+        String q = consultas.USUARIOGETBYNOMBRE.getConsulta() + "'" + nombre + "'";
         ResultSet rs = st.executeQuery(q);
         while (rs.next()) {
           this.id = rs.getDouble("id");
@@ -84,7 +80,7 @@ public class UsuarioDAO extends Usuario implements IUsuarioDAO {
     Connection con = conexion.getConexion();
     if (con != null) {
       try {
-        PreparedStatement q = con.prepareStatement(INSERTUPDATE);
+        PreparedStatement q = con.prepareStatement(consultas.USUARIOINSERTUPDATE.getConsulta());
         q.setString(1, this.nombre);
         q.setString(2, encoder.encrypt(this.password));
         q.setDouble(3, this.puntos);
@@ -112,7 +108,7 @@ public class UsuarioDAO extends Usuario implements IUsuarioDAO {
     if (con != null) {
       try {
         Statement st = con.createStatement();
-        String q = SELECTNOMBRE;
+        String q = consultas.USUARIOSELECTNOMBRE.getConsulta();
         ResultSet rs = st.executeQuery(q);
         while (rs.next()) {
           getNombres.add(rs.getString("nombre"));

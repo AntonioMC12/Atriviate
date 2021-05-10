@@ -15,13 +15,15 @@ package es.antoniomc.Atriviate.interfaces;
 
 import java.util.List;
 
+import es.antoniomc.Atriviate.model.Respuesta;
+
 public interface IPregunta {
 
   public void setCategoria(String category);
 
   public void setTexto(String question);
 
-  public void setRespuestas(List<IRespuesta> respuestas);
+  public void setRespuestas(List<Respuesta> respuestas);
 
   public String getCategoria();
 
@@ -29,7 +31,7 @@ public interface IPregunta {
 
   public String getTexto();
 
-  public List<IRespuesta> getRespuestas();
+  public List<Respuesta> getRespuestas();
 
   /**
    * Método que devuelve true si se añade correctamente una pregunta pasada por
@@ -38,7 +40,7 @@ public interface IPregunta {
    * @param answer
    * @return boolean
    */
-  public boolean addRespuesta(IRespuesta respuesta);
+  public boolean addRespuesta(Respuesta respuesta);
 
   /**
    * Método que devuelve true si consige borrarse una pregunta de la lista

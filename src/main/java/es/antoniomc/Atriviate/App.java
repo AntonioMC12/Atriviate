@@ -7,10 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
-import es.antoniomc.Atriviate.model.Usuario;
-import es.antoniomc.Atriviate.model.UsuarioDAO;
-import es.antoniomc.Atriviate.utils.encoder;
+
+
 
 /**
  * JavaFX App
@@ -39,6 +37,7 @@ public class App extends Application {
   public static void main(String[] args) {
     launch();
     // la contraseña de paco es 1234abc   
+    // la contraseña de test es test
     /*
     UsuarioDAO test1 = new UsuarioDAO("Yisus","1234abc",0);
     if(test1.save()!=-1) {
