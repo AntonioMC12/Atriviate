@@ -59,6 +59,10 @@ public class Pregunta implements IPregunta {
   public double getId() {
     return this.id;
   }
+  
+  public void setId(double id) {
+    this.id = id;
+  }
 
   @Override
   public boolean addRespuesta(Respuesta respuesta) {

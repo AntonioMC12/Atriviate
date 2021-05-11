@@ -14,28 +14,22 @@ import es.antoniomc.Atriviate.model.Pregunta;
 public interface IPreguntaDAO  extends IPregunta{
   
   /**
-   * Método que devuelve true si la pregunta se ha insertado en la lista correctamente
-   * 
-   * @param question
-   * @return booelan
-   */
-  public boolean addPregunta(IPregunta question);
-  
-  /**
    * Método que devuelve true si la pregunta se ha eliminado de la lista correctamente
    * 
-   * @param posicion de la pregunta en la lista
+   * @param 
    * @return booelan
    */
-  public boolean deletePregunta(int position);
+  public int deletePregunta();
+  
   
   /**
    * Método que devuelve la lista de todas las preguntas
    * 
    * 
    * @return Lista de preguntas
-   */
+   *
   public List<Pregunta> getPreguntas();
+  */
   
   /**
    * Método que filtra las preguntas por categoría y las devuelve en una lista de preguntas.
@@ -48,5 +42,5 @@ public interface IPreguntaDAO  extends IPregunta{
   /**
    * Método que guarda o actualiza una entrada en la base de datos.
    */
-  public void save();
+  public int save();
 }

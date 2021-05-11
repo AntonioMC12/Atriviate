@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.antoniomc.Atriviate.interfaces.IUsuario;
 import es.antoniomc.Atriviate.interfaces.IUsuarioDAO;
 import es.antoniomc.Atriviate.utils.conexion;
 import es.antoniomc.Atriviate.utils.consultas;
@@ -65,9 +64,8 @@ public class UsuarioDAO extends Usuario implements IUsuarioDAO {
     return false;
   }
 
-  @SuppressWarnings("exports")
   @Override
-  public IUsuario getUsuario(String name) {
+  public Usuario getUsuario(String name) {
     // TODO Auto-generated method stub
     return null;
   }
