@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+//import es.antoniomc.Atriviate.utils.doQuery;
+
 //import es.antoniomc.Atriviate.model.PreguntaDAO;
 //import es.antoniomc.Atriviate.model.RespuestaDAO;
 
@@ -71,6 +73,8 @@ public class App extends Application {
     testR.save();
     System.out.println(RespuestaDAO.getRespuestasByPregunta(4).toString());
     */
+    
+    //System.out.println(doQuery.getIdAutoIncrement());
     
   }
 }

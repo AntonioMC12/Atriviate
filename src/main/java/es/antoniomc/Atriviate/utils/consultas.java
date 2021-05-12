@@ -16,7 +16,7 @@ public enum consultas {
   
   PREGUNTASELECTALL("SELECT id, categoria, texto FROM Pregunta"),
   
-  PREGUNTAINSERTUPDATE("INSERT INTO Pregunta (id,categoria, texto) VALUES (?,?,?) ON DUPLICATE KEY UPDATE categoria=?, texto=?"),
+  PREGUNTAINSERTUPDATE("INSERT INTO Pregunta (categoria, texto) VALUES (?,?)"),
 
   PREGUNTAUPDATE("UPDATE Pregunta SET id=?,categoria=?,texto=? WHERE id=?"),
   
@@ -26,8 +26,12 @@ public enum consultas {
   
   RESPUESTADELETE("DELETE FROM Respuesta WHERE id ="),
   
-  RESPUESTAINSERTUPDATE("INSERT INTO Respuesta (texto,correcta,id_pregunta) VALUES (?,?,?) ON DUPLICATE KEY UPDATE texto=?,correcta=?,id_pregunta=?");
+  RESPUESTAINSERTUPDATE("INSERT INTO Respuesta (texto,correcta,id_pregunta) VALUES (?,?,?) ON DUPLICATE KEY UPDATE texto=?,correcta=?,id_pregunta=?"),
   
+  GETIDAUTOINCREMENT("SELECT `AUTO_INCREMENT` "
+      + "FROM  INFORMATION_SCHEMA.TABLES "
+      + "WHERE TABLE_SCHEMA = 'Atriviate' "
+      + "AND   TABLE_NAME   = 'Pregunta'");
   
   
   private String consulta;

@@ -2,6 +2,7 @@ package es.antoniomc.Atriviate.controller;
 
 import es.antoniomc.Atriviate.model.PreguntaDAO;
 import es.antoniomc.Atriviate.model.Respuesta;
+import es.antoniomc.Atriviate.utils.doQuery;
 import javafx.event.Event;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -48,6 +49,7 @@ public class CreatePreguntaController {
     if(checkFields()) {
       PreguntaDAO pregunta = new PreguntaDAO(this.txtPreguntaCategoria.getText(),this.txtPreguntaTexto.getText());
       
+      pregunta.setId(doQuery.getIdAutoIncrement());
       Respuesta respuesta1 = new Respuesta(pregunta,this.txtRespuestaTexto1.getText(),this.checkRespuesta1.isSelected());
       Respuesta respuesta2 = new Respuesta(pregunta,this.txtRespuestaTexto2.getText(),this.checkRespuesta2.isSelected());
       Respuesta respuesta3 = new Respuesta(pregunta,this.txtRespuestaTexto3.getText(),this.checkRespuesta3.isSelected());

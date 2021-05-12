@@ -111,27 +111,15 @@ public class PreguntaDAO extends Pregunta implements IPreguntaDAO {
     if (con != null) {
       try {
         PreparedStatement q = con.prepareStatement(consultas.PREGUNTAINSERTUPDATE.getConsulta());
-        q.setDouble(1, this.id);
-        q.setString(2, this.categoria);
-        q.setString(3, this.texto);
-        q.setString(4, this.categoria);
-        q.setString(5, this.texto);
+        q.setString(1, this.categoria);
+        q.setString(2, this.texto);
         rs = q.executeUpdate();
 
-        List<Respuesta> oldRespuestas = RespuestaDAO.getRespuestasByPregunta(this.id);
-
-        for (Respuesta r : respuestas) {
+        for (Respuesta r : this.respuestas) {
           r.setPregunta(this);
           RespuestaDAO rdao = new RespuestaDAO(r);
           rdao.save();
         }
-        for (Respuesta r : oldRespuestas) {
-          if (respuestas.indexOf(r) < 0) {
-            RespuestaDAO rdao = new RespuestaDAO(r);
-            rdao.deleteRespuesta();
-          }
-        }
-
       } catch (SQLException e) {
         e.printStackTrace();
       }
