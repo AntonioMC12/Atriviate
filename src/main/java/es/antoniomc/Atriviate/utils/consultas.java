@@ -8,14 +8,24 @@ public enum consultas {
   
   USUARIOSELECTNOMBRE("SELECT nombre FROM Usuario"),
   
-  PREGUNTAGETBYID("SELECT id, categoria, texto FROM Pregunta WHERE ID = "),
+  PREGUNTAGETBYID("SELECT id, categoria, texto FROM Pregunta WHERE id = "),
   
-  PREGUNTADELETE("DELETE FROM Pregunta WHERE ID ="),
+  PREGUNTADELETE("DELETE FROM Pregunta WHERE id ="),
   
   PREGUNTASELECTALL("SELECT id, categoria, texto FROM Pregunta"),
   
-  PREGUNTAINSERTUPDATE("INSERT INTO Pregunta (categoria, texto)" + "VALUES (?,?)" + "ON DUPLICATE KEY UPDATE categoria=?, texto=?");
+  PREGUNTAINSERTUPDATE("INSERT INTO Pregunta (categoria, texto) VALUES (?,?) ON DUPLICATE KEY UPDATE categoria=?, texto=?"),
 
+  RESPUESTAGETBYID("SELECT id, texto, correcta, id_pregunta as pregunta FROM Respuesta WHERE id = "),
+  
+  RESPUESTAGETBYPREGUNTA("SELECT r.id, r.texto, r.correcta, r.id_pregunta, p.id, p.categoria, p.texto FROM Respuesta r, Pregunta p WHERE r.id_pregunta = p.id AND r.id_pregunta =?"),
+  
+  RESPUESTADELETE("DELETE FROM Respuesta WHERE id ="),
+  
+  RESPUESTAINSERTUPDATE("INSERT INTO Respuesta (texto,correcta,id_pregunta) VALUES (?,?,?) ON DUPLICATE KEY UPDATE texto=?,correcta=?,id_pregunta=?");
+  
+  
+  
   private String consulta;
 
   consultas(String consulta) {

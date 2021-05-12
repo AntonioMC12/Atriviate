@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 import es.antoniomc.Atriviate.model.PreguntaDAO;
+import es.antoniomc.Atriviate.model.RespuestaDAO;
 
 
 
@@ -58,9 +59,18 @@ public class App extends Application {
     
     //PreguntaDAO test1 = new PreguntaDAO(1);
     //System.out.println(PreguntaDAO.getPreguntas().toString());
-    PreguntaDAO test = new PreguntaDAO("test",null,"prueba guardar");
-    test.save();
-
+    //PreguntaDAO test = new PreguntaDAO("test",null,"prueba guardar");
+    //test.save();
+    //RespuestaDAO test = new RespuestaDAO(1);
+    //System.out.println(test);
+    
+    PreguntaDAO testP = new PreguntaDAO(4);
+    System.out.println(testP);
+    RespuestaDAO testR = new RespuestaDAO(testP,"test de respuesta",false);
+    System.out.println(testR);
+    testR.save();
+    System.out.println(RespuestaDAO.getRespuestasByPregunta(4).toString());
+    
     
   }
 }

@@ -2,15 +2,13 @@ package es.antoniomc.Atriviate.model;
 
 import es.antoniomc.Atriviate.interfaces.IRespuesta;
 
-public class Respuesta implements IRespuesta{
-  
+public class Respuesta implements IRespuesta {
+
   protected double id;
   protected Pregunta pregunta;
   protected String texto;
   protected boolean correcta;
-  
-  
-  
+
   public Respuesta(double id, Pregunta pregunta, String texto, boolean correcta) {
     super();
     this.id = id;
@@ -18,41 +16,55 @@ public class Respuesta implements IRespuesta{
     this.texto = texto;
     this.correcta = correcta;
   }
-  
-  
+
   public Respuesta(Pregunta pregunta, String texto, boolean correcta) {
     this(-1, pregunta, texto, correcta);
   }
-  
+
   public Respuesta(double id) {
-    this(id,null,"",false);
+    this(id, null, "", false);
   }
-  
+
+  public Respuesta() {
+    this(-1, null, "", false);
+  }
+
   public Pregunta getPregunta() {
     return pregunta;
   }
+
   public void setPregunta(Pregunta pregunta) {
     this.pregunta = pregunta;
   }
+
   public String getTexto() {
     return texto;
   }
+
   public void setTexto(String texto) {
     this.texto = texto;
   }
+
   public boolean isCorrecta() {
     return correcta;
   }
+
   public void setCorrecta(boolean correcta) {
     this.correcta = correcta;
   }
+
+  public void setId(double id) {
+    this.id = id;
+  }
+
   @Override
   public double getId() {
     return this.id;
   }
+
   @Override
   public String toString() {
-    return "Respuesta [id=" + id + ", pregunta=" + pregunta + ", texto=" + texto + ", correcta=" + correcta + "]";
+    return "Respuesta [id=" + id + ", pregunta=" + pregunta.texto + ", texto=" + texto + ", correcta=" + correcta + "]";
   }
 
   @Override
@@ -68,6 +80,5 @@ public class Respuesta implements IRespuesta{
       return false;
     return true;
   }
-  
-  
+
 }
