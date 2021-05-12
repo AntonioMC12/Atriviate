@@ -8,8 +8,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import es.antoniomc.Atriviate.model.PreguntaDAO;
-import es.antoniomc.Atriviate.model.RespuestaDAO;
+//import es.antoniomc.Atriviate.model.PreguntaDAO;
+//import es.antoniomc.Atriviate.model.RespuestaDAO;
 
 
 
@@ -38,7 +38,7 @@ public class App extends Application {
   }
 
   public static void main(String[] args) {
-    //launch();
+    launch();
     // la contraseña de paco es 1234abc   
     // la contraseña de test es test
     /*
@@ -55,7 +55,7 @@ public class App extends Application {
     }else {
       System.out.println("No coincide");
     }
-    */
+    
     
     //PreguntaDAO test1 = new PreguntaDAO(1);
     //System.out.println(PreguntaDAO.getPreguntas().toString());
@@ -70,7 +70,7 @@ public class App extends Application {
     System.out.println(testR);
     testR.save();
     System.out.println(RespuestaDAO.getRespuestasByPregunta(4).toString());
-    
+    */
     
   }
 }

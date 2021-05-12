@@ -49,5 +49,5 @@ public interface IPregunta {
    * @param position
    * @return boolean
    */
-  public boolean deleteRespuesta(double id);
+  public void deleteRespuestas();
 }

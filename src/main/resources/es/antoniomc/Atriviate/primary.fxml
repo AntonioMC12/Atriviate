@@ -9,8 +9,8 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="664.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.antoniomc.Atriviate.controller.PrimaryController">
    <children>
       <Button fx:id="playButton" layoutX="237.0" layoutY="183.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="191.0" text="PLAY" AnchorPane.bottomAnchor="205.0" AnchorPane.leftAnchor="237.0" AnchorPane.topAnchor="183.0" />
-      <Button fx:id="createPreguntaButton" layoutX="139.0" layoutY="316.0" mnemonicParsing="false" text="Crear Pregunta" />
-      <Button fx:id="editPreguntaButton" layoutX="272.0" layoutY="316.0" mnemonicParsing="false" text="Editar Pregunta" />
+      <Button fx:id="createPreguntaButton" layoutX="139.0" layoutY="316.0" mnemonicParsing="false" onAction="#createPregunta" text="Crear Pregunta" />
+      <Button fx:id="editPreguntaButton" layoutX="272.0" layoutY="316.0" mnemonicParsing="false" onAction="#editPregunta" text="Editar Pregunta" />
       <Button fx:id="rankingButton" layoutX="283.0" layoutY="389.0" mnemonicParsing="false" text="Ver Ranking" />
       <Text layoutX="179.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¡BIENVENIDO!" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="306.02197265625" AnchorPane.bottomAnchor="406.0" AnchorPane.leftAnchor="179.0" AnchorPane.rightAnchor="178.97802734375" AnchorPane.topAnchor="44.0">
          <font>

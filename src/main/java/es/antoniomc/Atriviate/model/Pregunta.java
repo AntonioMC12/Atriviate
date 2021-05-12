@@ -1,5 +1,6 @@
 package es.antoniomc.Atriviate.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import es.antoniomc.Atriviate.interfaces.IPregunta;
@@ -18,17 +19,24 @@ public class Pregunta implements IPregunta {
     this.respuestas = respuestas;
     this.texto = texto;
   }
-  
+
   public Pregunta(String categoria, List<Respuesta> respuestas, String texto) {
-    this(-1,categoria,respuestas,texto);
+    this(-1, categoria, respuestas, texto);
   }
-  
+
+  public Pregunta(String categoria, String texto) {
+    super();
+    this.categoria = categoria;
+    this.texto = texto;
+    this.respuestas = new ArrayList<Respuesta>();
+  }
+
   public Pregunta(double id) {
-    this(id,"",null,"");
+    this(id, "", null, "");
   }
-  
+
   public Pregunta() {
-    this(-1,"",null,"");
+    this(-1, "", null, "");
   }
 
   public String getCategoria() {
@@ -59,7 +67,7 @@ public class Pregunta implements IPregunta {
   public double getId() {
     return this.id;
   }
-  
+
   public void setId(double id) {
     this.id = id;
   }
@@ -74,16 +82,8 @@ public class Pregunta implements IPregunta {
   }
 
   @Override
-  public boolean deleteRespuesta(double id) {
-    boolean deleteRespuesta = false;
-
-    Respuesta dummy = new Respuesta(id);
-    if (this.respuestas.contains(dummy)) {
-      this.respuestas.remove(dummy);
-      deleteRespuesta = true;
-    }
-
-    return deleteRespuesta;
+  public void deleteRespuestas() {
+    this.respuestas.clear();
   }
 
   @Override

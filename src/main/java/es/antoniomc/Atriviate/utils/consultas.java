@@ -14,8 +14,10 @@ public enum consultas {
   
   PREGUNTASELECTALL("SELECT id, categoria, texto FROM Pregunta"),
   
-  PREGUNTAINSERTUPDATE("INSERT INTO Pregunta (categoria, texto) VALUES (?,?) ON DUPLICATE KEY UPDATE categoria=?, texto=?"),
+  PREGUNTAINSERTUPDATE("INSERT INTO Pregunta (id,categoria, texto) VALUES (?,?,?) ON DUPLICATE KEY UPDATE categoria=?, texto=?"),
 
+  PREGUNTAUPDATE("UPDATE Pregunta SET id=?,categoria=?,texto=? WHERE id=?"),
+  
   RESPUESTAGETBYID("SELECT id, texto, correcta, id_pregunta as pregunta FROM Respuesta WHERE id = "),
   
   RESPUESTAGETBYPREGUNTA("SELECT r.id, r.texto, r.correcta, r.id_pregunta, p.id, p.categoria, p.texto FROM Respuesta r, Pregunta p WHERE r.id_pregunta = p.id AND r.id_pregunta =?"),

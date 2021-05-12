@@ -18,6 +18,10 @@ public class PreguntaDAO extends Pregunta implements IPreguntaDAO {
     super(categoria, respuestas, texto);
   }
 
+  public PreguntaDAO(String categoria, String texto) {
+    super(categoria, texto);
+  }
+
   public PreguntaDAO(Pregunta pregunta) {
     this.respuestas = pregunta.respuestas;
     this.id = pregunta.id;
@@ -27,9 +31,9 @@ public class PreguntaDAO extends Pregunta implements IPreguntaDAO {
 
   public PreguntaDAO(double id) {
     super();
-    
+
     Connection con = conexion.getConexion();
-    
+
     if (con != null) {
       try {
         Statement st = con.createStatement();
@@ -40,7 +44,7 @@ public class PreguntaDAO extends Pregunta implements IPreguntaDAO {
           this.categoria = rs.getString("categoria");
           this.texto = rs.getString("texto");
         }
-        // setear respuestas
+        this.respuestas = RespuestaDAO.getRespuestasByPregunta(id);
       } catch (SQLException e) {
         e.printStackTrace();
       }
@@ -67,12 +71,11 @@ public class PreguntaDAO extends Pregunta implements IPreguntaDAO {
     return rs;
   }
 
-
   public static List<Pregunta> getPreguntas() {
-    
+
     List<Pregunta> preguntas = new ArrayList<>();
     Connection con = conexion.getConexion();
-    
+
     if (con != null) {
       try {
         Statement st = con.createStatement();
@@ -83,9 +86,9 @@ public class PreguntaDAO extends Pregunta implements IPreguntaDAO {
           dummy.setId(rs.getDouble("id"));
           dummy.setCategoria(rs.getString("categoria"));
           dummy.setTexto(rs.getString("texto"));
+          dummy.setRespuestas(RespuestaDAO.getRespuestasByPregunta(rs.getDouble("id")));
           preguntas.add(dummy);
         }
-        // setear respuestas
       } catch (SQLException e) {
         e.printStackTrace();
       }
@@ -101,46 +104,73 @@ public class PreguntaDAO extends Pregunta implements IPreguntaDAO {
 
   @Override
   public int save() {
-    
-    int rs=0;
+
+    int rs = 0;
     Connection con = conexion.getConexion();
-    
+
     if (con != null) {
       try {
-        PreparedStatement q=con.prepareStatement(consultas.PREGUNTAINSERTUPDATE.getConsulta());
-        q.setString(1, this.categoria);
-        q.setString(2, this.texto);
-        q.setString(3, this.categoria);
-        q.setString(4, this.texto);
-        rs =q.executeUpdate();
-        
-        /*
-        //Actualizar mis respuestas
-        
-        //respuesatas en la BBDD
-        List<Libro> obrasantiguas=LibroDAO.getLibrosByAutor(this.dni);
-        
-        //Recorro las actuales para actualizar
-        for(Libro l:misobras) {
-          l.setMiautor(this);  //<--- IMPORTANTE
-          LibroDAO ldao=new LibroDAO(l);
-          ldao.guardar();
+        PreparedStatement q = con.prepareStatement(consultas.PREGUNTAINSERTUPDATE.getConsulta());
+        q.setDouble(1, this.id);
+        q.setString(2, this.categoria);
+        q.setString(3, this.texto);
+        q.setString(4, this.categoria);
+        q.setString(5, this.texto);
+        rs = q.executeUpdate();
+
+        List<Respuesta> oldRespuestas = RespuestaDAO.getRespuestasByPregunta(this.id);
+
+        for (Respuesta r : respuestas) {
+          r.setPregunta(this);
+          RespuestaDAO rdao = new RespuestaDAO(r);
+          rdao.save();
         }
-        //Recorro y busco aquellas que est�n en la
-        //BBDD y no en mi lista
-        for(Libro l:obrasantiguas) {
-          if(misobras.indexOf(l)<0) {
-            LibroDAO ldao=new LibroDAO(l);
-            ldao.eliminar();
+        for (Respuesta r : oldRespuestas) {
+          if (respuestas.indexOf(r) < 0) {
+            RespuestaDAO rdao = new RespuestaDAO(r);
+            rdao.deleteRespuesta();
           }
         }
-        */
+
       } catch (SQLException e) {
         e.printStackTrace();
       }
     }
     return rs;
+  }
+  
+  public int update() {
+    int rs = 0;
+    Connection con = conexion.getConexion();
 
+    if (con != null) {
+      try {
+        PreparedStatement q = con.prepareStatement(consultas.PREGUNTAUPDATE.getConsulta());
+        q.setDouble(1, this.id);
+        q.setString(2, this.categoria);
+        q.setString(3, this.texto);
+        q.setDouble(4, this.id);
+        rs = q.executeUpdate();
+
+        List<Respuesta> oldRespuestas = RespuestaDAO.getRespuestasByPregunta(this.id);
+
+        for (Respuesta r : respuestas) {
+          r.setPregunta(this);
+          RespuestaDAO rdao = new RespuestaDAO(r);
+          rdao.save();
+        }
+        for (Respuesta r : oldRespuestas) {
+          if (respuestas.indexOf(r) < 0) {
+            RespuestaDAO rdao = new RespuestaDAO(r);
+            rdao.deleteRespuesta();
+          }
+        }
+
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    }
+    return rs;
   }
 
 }
