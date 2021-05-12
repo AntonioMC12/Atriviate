@@ -8,6 +8,8 @@ public enum consultas {
   
   USUARIOSELECTNOMBRE("SELECT nombre FROM Usuario"),
   
+  USUARIOSELECTALL("SELECT id,nombre,password,puntos FROM Usuario"),
+  
   PREGUNTAGETBYID("SELECT id, categoria, texto FROM Pregunta WHERE id = "),
   
   PREGUNTADELETE("DELETE FROM Pregunta WHERE id ="),

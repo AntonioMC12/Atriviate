@@ -74,4 +74,44 @@ public class PrimaryController {
       e.printStackTrace();
     }
   }
+  
+  @FXML
+  public void deletePregunta(ActionEvent event) {
+    FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("DeletePregunta.fxml"));
+    Parent modal;
+    try {
+      modal = fxmlLoader.load();
+      Stage modalStage = new Stage();
+      modalStage.initModality(Modality.APPLICATION_MODAL);
+      modalStage.initOwner(App.rootstage);
+      Scene modalScene = new Scene(modal);
+      modalStage.setScene(modalScene);
+      modalStage.showAndWait();
+      modalStage.setResizable(false);
+    } catch (IOException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+  }
+  
+  @FXML
+  public void ranking(ActionEvent event) {
+    FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Ranking.fxml"));
+    Parent modal;
+    try {
+      modal = fxmlLoader.load();
+      Stage modalStage = new Stage();
+      modalStage.initModality(Modality.APPLICATION_MODAL);
+      modalStage.initOwner(App.rootstage);
+      Scene modalScene = new Scene(modal);
+      modalStage.setScene(modalScene);
+      modalStage.showAndWait();
+      modalStage.setResizable(false);
+    } catch (IOException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+  }
+  
+  
 }

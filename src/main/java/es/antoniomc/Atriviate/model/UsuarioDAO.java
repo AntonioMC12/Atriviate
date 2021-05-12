@@ -64,17 +64,32 @@ public class UsuarioDAO extends Usuario implements IUsuarioDAO {
     return false;
   }
 
-  @Override
-  public Usuario getUsuario(String name) {
-    // TODO Auto-generated method stub
-    return null;
+
+  public static List<Usuario> getUsuarios() {
+    List<Usuario> usuarios = new ArrayList<>();
+    Connection con = conexion.getConexion();
+
+    if (con != null) {
+      try {
+        Statement st = con.createStatement();
+        String q = consultas.USUARIOSELECTALL.getConsulta();
+        ResultSet rs = st.executeQuery(q);
+        while (rs.next()) {
+          Usuario dummy = new Usuario();
+          dummy.setNombre(rs.getString("nombre"));
+          dummy.setPassword(rs.getString("password"));
+          dummy.setPuntos(rs.getDouble("puntos"));
+          usuarios.add(dummy);
+        }
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    }
+    return usuarios;
   }
 
   @Override
   public int save() {
-    // INSERT o UPDATE
-    // INSERT -> si no existe OK
-    // En caso de ERROR -> hago un update
     int rs = 0;
     Connection con = conexion.getConexion();
     if (con != null) {

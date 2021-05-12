@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="428.0" prefWidth="318.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.antoniomc.Atriviate.controller.RankingController">
+   <children>
+      <TableView fx:id="tableUsuario" prefHeight="402.0" prefWidth="318.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="tableColumnNombreUsuario" prefWidth="158.0" text="Nombre" />
+          <TableColumn fx:id="tableColumnPuntosUsuario" prefWidth="159.0" text="Puntos" />
+        </columns>
+      </TableView>
+      <Button fx:id="closeButton" layoutX="125.0" layoutY="402.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="68.0" text="Cerrar" AnchorPane.bottomAnchor="0.0" />
+   </children>
+</AnchorPane>

@@ -24,7 +24,7 @@ public interface IUsuarioDAO {
    * @param name
    * @return El usuario
    */
-  public IUsuario getUsuario(String name);
+  //public IUsuario getUsuario(String name);
   
   /**
    * Método para guardar en la base de datos

@@ -52,10 +52,12 @@ public class EditPreguntaController {
   public void initialize() {
     ObservableList<Pregunta> preguntas = FXCollections.observableArrayList(PreguntaDAO.getPreguntas());
     this.comboPregunta.setItems(preguntas);
+    this.saveButton.setDisable(true);
   }
   
   @FXML
   public void comboSelect() {
+    this.saveButton.setDisable(false);
     Pregunta dummy = comboPregunta.getValue();
     List<Respuesta> dummyrespuestas = dummy.getRespuestas();
     
