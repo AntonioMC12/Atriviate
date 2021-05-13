@@ -6,6 +6,7 @@ module es.antoniomc.Atriviate {
     requires transitive java.sql;
     requires jbcrypt;
     requires javafx.base;
+    requires java.desktop;
 
     opens es.antoniomc.Atriviate to javafx.fxml;
     exports es.antoniomc.Atriviate;

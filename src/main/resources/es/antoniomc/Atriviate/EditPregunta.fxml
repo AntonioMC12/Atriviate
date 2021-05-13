@@ -4,37 +4,31 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="431.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.antoniomc.Atriviate.controller.EditPreguntaController">
    <children>
-      <Text layoutX="91.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EDITAR PREGUNTA" wrappingWidth="233.29052734375">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
-      <ComboBox fx:id="comboPregunta" layoutX="97.0" layoutY="73.0" onAction="#comboSelect" prefHeight="24.0" prefWidth="218.0" promptText="Selecciona la Pregunta" />
-      <TextField fx:id="txtPreguntaCategoria" layoutX="47.0" layoutY="134.0" prefHeight="24.0" prefWidth="317.0" promptText="Categoria" />
-      <Text layoutX="47.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categoría:" />
-      <Text layoutX="47.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pregunta:" />
-      <TextField fx:id="txtPreguntaTexto" layoutX="47.0" layoutY="193.0" prefHeight="45.0" prefWidth="317.0" promptText="Pregunta" />
-      <TextField fx:id="txtRespuestaTexto1" layoutX="47.0" layoutY="302.0" prefHeight="24.0" prefWidth="317.0" promptText="Respuesta 1" />
-      <TextField fx:id="txtRespuestaTexto2" layoutX="47.0" layoutY="336.0" prefHeight="24.0" prefWidth="317.0" promptText="Respuesta 2" />
-      <TextField fx:id="txtRespuestaTexto3" layoutX="47.0" layoutY="372.0" prefHeight="24.0" prefWidth="317.0" promptText="Respuesta 3" />
-      <TextField fx:id="txtRespuestaTexto4" layoutX="47.0" layoutY="406.0" prefHeight="24.0" prefWidth="317.0" promptText="Respuesta 4" />
-      <Text layoutX="47.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Respuestas:" />
-      <CheckBox fx:id="checkRespuesta1" layoutX="383.0" layoutY="305.0" mnemonicParsing="false" />
-      <CheckBox fx:id="checkRespuesta2" layoutX="383.0" layoutY="339.0" mnemonicParsing="false" />
-      <CheckBox fx:id="checkRespuesta3" layoutX="383.0" layoutY="375.0" mnemonicParsing="false" />
-      <CheckBox fx:id="checkRespuesta4" layoutX="383.0" layoutY="409.0" mnemonicParsing="false" />
-      <Text layoutX="369.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marca la Correcta" wrappingWidth="46.746429443359375">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Text>
-      <Button fx:id="saveButton" layoutX="32.0" layoutY="458.0" mnemonicParsing="false" onAction="#updatePregunta" text="Guardar" />
-      <Button fx:id="closeButton" layoutX="344.0" layoutY="458.0" mnemonicParsing="false" onAction="#close" text="Cerrar" />
+      <ImageView fitHeight="519.0" fitWidth="442.0" layoutX="-4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagen/edit.jpg" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="comboPregunta" layoutX="104.0" layoutY="87.0" onAction="#comboSelect" prefHeight="24.0" prefWidth="218.0" promptText="Selecciona la Pregunta" />
+      <TextField fx:id="txtPreguntaCategoria" layoutX="55.0" layoutY="139.0" prefHeight="24.0" prefWidth="317.0" promptText="Categoria" />
+      <TextField fx:id="txtPreguntaTexto" layoutX="56.0" layoutY="165.0" prefHeight="45.0" prefWidth="317.0" promptText="Pregunta" />
+      <TextField fx:id="txtRespuestaTexto1" layoutX="38.0" layoutY="283.0" prefHeight="26.0" prefWidth="274.0" promptText="Respuesta 1" />
+      <TextField fx:id="txtRespuestaTexto2" layoutX="42.0" layoutY="326.0" prefHeight="26.0" prefWidth="266.0" promptText="Respuesta 2" />
+      <TextField fx:id="txtRespuestaTexto3" layoutX="47.0" layoutY="372.0" prefHeight="26.0" prefWidth="266.0" promptText="Respuesta 3" />
+      <TextField fx:id="txtRespuestaTexto4" layoutX="47.0" layoutY="420.0" prefHeight="26.0" prefWidth="266.0" promptText="Respuesta 4" />
+      <Text fill="WHITE" layoutX="38.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Respuestas:" />
+      <CheckBox fx:id="checkRespuesta1" layoutX="371.0" layoutY="284.0" mnemonicParsing="false" />
+      <CheckBox fx:id="checkRespuesta2" layoutX="371.0" layoutY="327.0" mnemonicParsing="false" />
+      <CheckBox fx:id="checkRespuesta3" layoutX="371.0" layoutY="373.0" mnemonicParsing="false" />
+      <CheckBox fx:id="checkRespuesta4" layoutX="371.0" layoutY="421.0" mnemonicParsing="false" />
+      <Button fx:id="saveButton" layoutX="68.0" layoutY="466.0" mnemonicParsing="false" onAction="#updatePregunta" prefHeight="30.0" prefWidth="73.0" text="Guardar" />
+      <Button fx:id="closeButton" layoutX="254.0" layoutY="466.0" mnemonicParsing="false" onAction="#close" text="Cerrar" />
    </children>
 </AnchorPane>

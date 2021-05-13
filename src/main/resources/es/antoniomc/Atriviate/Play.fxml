@@ -3,26 +3,39 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.antoniomc.Atriviate.controller.PlayController">
    <children>
-      <TextArea fx:id="txtPreguntaTexto" layoutX="66.0" layoutY="44.0" prefHeight="110.0" prefWidth="459.0">
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@Imagen/play.jpg" />
+         </image>
+      </ImageView>
+      <TextArea fx:id="txtPreguntaTexto" layoutX="68.0" layoutY="151.0" prefHeight="73.0" prefWidth="462.0">
          <font>
             <Font name="LMRoman10-Bold" size="15.0" />
          </font>
       </TextArea>
-      <Button fx:id="Respuesta1Button" layoutX="66.0" layoutY="170.0" mnemonicParsing="false" onAction="#checkButton1" prefHeight="60.0" prefWidth="212.0" text="Button 1" />
-      <Button fx:id="Respuesta2Button" layoutX="313.0" layoutY="170.0" mnemonicParsing="false" onAction="#checkButton2" prefHeight="60.0" prefWidth="212.0" text="Button 2" />
-      <Button fx:id="Respuesta3Button" layoutX="66.0" layoutY="251.0" mnemonicParsing="false" onAction="#checkButton3" prefHeight="60.0" prefWidth="212.0" text="Button 3" />
-      <Button fx:id="Respuesta4Button" layoutX="313.0" layoutY="251.0" mnemonicParsing="false" onAction="#checkButton4" prefHeight="60.0" prefWidth="212.0" text="Button 4" />
-      <Button fx:id="exitButton" layoutX="265.0" layoutY="342.0" mnemonicParsing="false" onAction="#close" text="SALIR" />
-      <Text layoutX="172.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione la respuesta correcta" />
-      <Label fx:id="LVidas" layoutX="14.0" layoutY="44.0" text="Label" />
-      <Label fx:id="LPuntos" layoutX="541.0" layoutY="44.0" text="Label" />
-      <Text layoutX="14.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vidas" />
-      <Text layoutX="538.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puntos" />
+      <Button fx:id="Respuesta1Button" layoutX="86.0" layoutY="236.0" mnemonicParsing="false" onAction="#checkButton1" prefHeight="32.0" prefWidth="171.0" style="-fx-background-color: #66000000;" text="Button 1" textFill="WHITE" />
+      <Button fx:id="Respuesta2Button" layoutX="351.0" layoutY="236.0" mnemonicParsing="false" onAction="#checkButton2" prefHeight="32.0" prefWidth="182.0" style="-fx-background-color: #66000000;" text="Button 2" textFill="WHITE" />
+      <Button fx:id="Respuesta3Button" layoutX="86.0" layoutY="289.0" mnemonicParsing="false" onAction="#checkButton3" prefHeight="32.0" prefWidth="171.0" style="-fx-background-color: #66000000;" text="Button 3" textFill="WHITE" />
+      <Button fx:id="Respuesta4Button" layoutX="365.0" layoutY="289.0" minHeight="18.0" mnemonicParsing="false" onAction="#checkButton4" prefHeight="32.0" prefWidth="153.0" style="-fx-background-color: #ff000000;" text="Button 4" textFill="WHITE" />
+      <Button fx:id="exitButton" layoutX="272.0" layoutY="342.0" mnemonicParsing="false" onAction="#close" text="SALIR" />
+      <Label fx:id="LVidas" layoutX="127.0" layoutY="118.0" text="Label" textFill="#f5f0f0" />
+      <Label fx:id="LPuntos" layoutX="442.0" layoutY="118.0" text="Label" textFill="#f0ecec" />
+      <ImageView fitHeight="33.0" fitWidth="54.0" layoutX="48.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagen/heart.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="46.0" fitWidth="33.0" layoutX="530.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Imagen/coins.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

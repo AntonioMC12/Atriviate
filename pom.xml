@@ -31,6 +31,11 @@
 			<artifactId>jbcrypt</artifactId>
 			<version>0.3m</version>
 		</dependency>
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-media</artifactId>
+			<version>17-ea+9</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

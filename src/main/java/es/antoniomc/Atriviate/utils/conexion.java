@@ -13,7 +13,7 @@ import java.util.List;
 public class conexion {
 
   private static Connection con;
-  // Esto debe ir en un XML
+  
   private final static String SERVER = xmlReader.getConectionInfo("server");
   private final static String DATABASE = xmlReader.getConectionInfo("database");
   private final static String USERNAME = xmlReader.getConectionInfo("user");

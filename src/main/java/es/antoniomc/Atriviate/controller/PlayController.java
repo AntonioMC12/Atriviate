@@ -7,6 +7,7 @@ import es.antoniomc.Atriviate.model.PreguntaDAO;
 import es.antoniomc.Atriviate.model.Usuario;
 import es.antoniomc.Atriviate.model.UsuarioDAO;
 import es.antoniomc.Atriviate.model.usuarioHolder;
+import es.antoniomc.Atriviate.utils.AudioFilePlayer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -39,9 +40,12 @@ public class PlayController {
   private List<Pregunta> preguntas;
   private int index;
   private Usuario usuario;
+  AudioFilePlayer audio;
 
   @FXML
   public void initialize() {
+    audio = new AudioFilePlayer();
+    audio.start();
 
     usuarioHolder holder = usuarioHolder.getInstance();
     usuario = holder.getUser();
@@ -151,12 +155,14 @@ public class PlayController {
     alert.showAndWait();
   }
 
+  @SuppressWarnings("deprecation")
   @FXML
   private void close(ActionEvent event) {
     Stage stage = (Stage) exitButton.getScene().getWindow();
     stage.close();
     UsuarioDAO udao = new UsuarioDAO(usuario);
     udao.save();
+    audio.stop();
   }
 
 }

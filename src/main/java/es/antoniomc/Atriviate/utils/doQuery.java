@@ -22,7 +22,6 @@ public class doQuery {
       } catch (SQLException e) {
         e.printStackTrace();
       }
-
     }
     return getIdAutoIncrement;
   }
