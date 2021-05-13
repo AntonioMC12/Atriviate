@@ -29,6 +29,8 @@ public class PrimaryController {
   protected Button deletePreguntaButton;
   @FXML
   protected Button rankingButton;
+  @FXML
+  private Button closeButton;
 
   @FXML
   public void initialize() {
@@ -113,5 +115,33 @@ public class PrimaryController {
     }
   }
   
+  @FXML
+  public void play(ActionEvent event) {
+    FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Play.fxml"));
+    Parent modal;
+    try {
+      modal = fxmlLoader.load();
+      Stage modalStage = new Stage();
+      modalStage.initModality(Modality.APPLICATION_MODAL);
+      modalStage.initOwner(App.rootstage);
+      Scene modalScene = new Scene(modal);
+      modalStage.setScene(modalScene);
+      modalStage.showAndWait();
+      modalStage.setResizable(false);
+    } catch (IOException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+  }
+  
+  @FXML
+  private void close(ActionEvent event){
+    try {
+      App.setRoot("Login");
+    } catch (IOException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+  }
   
 }

@@ -12,6 +12,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
@@ -31,6 +33,9 @@ public class CreateUserController {
   @FXML
   public void createUser(ActionEvent event) {
     
+    Node  source = (Node)  event.getSource(); 
+    Stage stage  = (Stage) source.getScene().getWindow();
+    
     usuarioHolder holder = usuarioHolder.getInstance();
     String nombre = this.txtUsuarioNombre.getText();
     String password = this.txtUsuarioPassword.getText();
@@ -48,7 +53,10 @@ public class CreateUserController {
 
         try {
           holder.setUser(new UsuarioDAO(nombre));
+          showValid("¡Usuario creado con éxito!");
           App.setRoot("primary");
+          stage.close();
+          
         } catch (IOException e) {
           e.printStackTrace();
         }
@@ -67,6 +75,16 @@ public class CreateUserController {
   @FXML
   public boolean checkFields(String nombre, String password) {
     return (!this.txtUsuarioNombre.getText().trim().isEmpty() && !this.txtUsuarioPassword.getText().trim().isEmpty());
+  }
+  
+  @FXML
+  public void showValid(String text) {
+    Alert alert = new Alert(AlertType.INFORMATION);
+    
+    alert.setHeaderText(null);
+    alert.setTitle("Éxito");
+    alert.setContentText(text);
+    alert.showAndWait();
   }
 
   @FXML

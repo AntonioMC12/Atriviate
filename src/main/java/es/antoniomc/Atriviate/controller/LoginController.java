@@ -29,6 +29,8 @@ public class LoginController {
   private Button LoginButton;
   @FXML
   private Button CreateUserButton;
+  @FXML
+  private Button closeButton;
 
   @FXML
   public void initialize() {
@@ -99,6 +101,12 @@ public class LoginController {
     alert.setTitle("Error");
     alert.setContentText(text);
     alert.showAndWait();
+  }
+  
+  @FXML
+  private void close(ActionEvent event){
+    Stage stage = (Stage) closeButton.getScene().getWindow();
+    stage.close();
   }
 
 }

@@ -51,7 +51,7 @@ public class Usuario implements IUsuario {
 
   @Override
   public void addPuntos(double points) {
-    // TODO Auto-generated method stub
+    this.puntos += points;
   }
 
   public String getPassword() {

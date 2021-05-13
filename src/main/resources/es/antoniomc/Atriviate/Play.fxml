@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.antoniomc.Atriviate.controller.PlayController">
    <children>
       <TextArea fx:id="txtPreguntaTexto" layoutX="66.0" layoutY="44.0" prefHeight="110.0" prefWidth="459.0">
          <font>
             <Font name="LMRoman10-Bold" size="15.0" />
          </font>
       </TextArea>
-      <Button fx:id="Respuesta1Button" layoutX="66.0" layoutY="170.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="212.0" text="Button 1" />
-      <Button fx:id="Respuesta2Button" layoutX="313.0" layoutY="170.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="212.0" text="Button 2" />
-      <Button fx:id="Respuesta3Button" layoutX="66.0" layoutY="251.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="212.0" text="Button 3" />
-      <Button fx:id="Respuesta4Button" layoutX="313.0" layoutY="251.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="212.0" text="Button 4" />
-      <Button layoutX="265.0" layoutY="342.0" mnemonicParsing="false" text="SALIR" />
+      <Button fx:id="Respuesta1Button" layoutX="66.0" layoutY="170.0" mnemonicParsing="false" onAction="#checkButton1" prefHeight="60.0" prefWidth="212.0" text="Button 1" />
+      <Button fx:id="Respuesta2Button" layoutX="313.0" layoutY="170.0" mnemonicParsing="false" onAction="#checkButton2" prefHeight="60.0" prefWidth="212.0" text="Button 2" />
+      <Button fx:id="Respuesta3Button" layoutX="66.0" layoutY="251.0" mnemonicParsing="false" onAction="#checkButton3" prefHeight="60.0" prefWidth="212.0" text="Button 3" />
+      <Button fx:id="Respuesta4Button" layoutX="313.0" layoutY="251.0" mnemonicParsing="false" onAction="#checkButton4" prefHeight="60.0" prefWidth="212.0" text="Button 4" />
+      <Button fx:id="exitButton" layoutX="265.0" layoutY="342.0" mnemonicParsing="false" onAction="#close" text="SALIR" />
       <Text layoutX="172.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione la respuesta correcta" />
+      <Label fx:id="LVidas" layoutX="14.0" layoutY="44.0" text="Label" />
+      <Label fx:id="LPuntos" layoutX="541.0" layoutY="44.0" text="Label" />
+      <Text layoutX="14.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vidas" />
+      <Text layoutX="538.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puntos" />
    </children>
 </AnchorPane>

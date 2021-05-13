@@ -88,7 +88,7 @@ public class Pregunta implements IPregunta {
 
   @Override
   public String toString() {
-    return "Pregunta [id=" + id + ", categoria=" + categoria + ", respuestas=" + respuestas + ", texto=" + texto + "]";
+    return "Pregunta [id=" + id + ", categoria=" + categoria +", texto=" + texto + "]";
   }
 
   @Override
