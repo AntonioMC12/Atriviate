@@ -22,14 +22,10 @@ public class conexion {
   public static void conecta() {
     try {
       Class.forName("com.mysql.cj.jdbc.Driver");
-      System.out.println("Estableciendo conexión con la base de datos...");
       con = DriverManager.getConnection(SERVER + "/" + DATABASE, USERNAME, PASSWORD);
-      System.out.println("Conexión establecida correctamente!");
     } catch (ClassNotFoundException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     } catch (SQLException e) {
-      // TODO Auto-generated catch block
       con = null;
       e.printStackTrace();
     }
@@ -60,7 +56,6 @@ public class conexion {
         resultado.add(fila);
       }
     } catch (SQLException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
 

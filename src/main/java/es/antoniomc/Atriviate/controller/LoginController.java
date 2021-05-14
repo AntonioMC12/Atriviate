@@ -44,7 +44,6 @@ public class LoginController {
     usuarioHolder holder = usuarioHolder.getInstance();
 
     if (checkFields(nombre, pass)) {
-      System.out.println("Check In correcto!");
       UsuarioDAO usuario = new UsuarioDAO(nombre);
       holder.setUser(usuario);
       

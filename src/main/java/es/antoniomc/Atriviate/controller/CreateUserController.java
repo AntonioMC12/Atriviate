@@ -43,7 +43,6 @@ public class CreateUserController {
     if (checkFields(nombre, password)) {
 
       List<String> nombres = UsuarioDAO.getNombres();
-      System.out.println(nombres);
 
       if (!nombres.contains(nombre)) {
 
