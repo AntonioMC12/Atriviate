@@ -219,7 +219,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Antonio Muñoz - [@twitter_handle](https://twitter.com/tonimc12) - tonicubero12@gmail.com
+Antonio Muñoz - [@ToniMC12](https://twitter.com/tonimc12)
 
 Project Link: [https://github.com/ErTonix12/Atriviate](https://github.com/ErTonix12/Atriviate)
 
