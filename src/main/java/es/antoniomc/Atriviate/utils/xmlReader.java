@@ -1,9 +1,6 @@
 package es.antoniomc.Atriviate.utils;
 
 import java.io.IOException;
-//import java.util.ArrayList;
-//import java.util.Arrays;
-//import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -15,7 +12,6 @@ import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
 import org.w3c.dom.Document;
-//import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import es.antoniomc.Atriviate.App;

@@ -58,6 +58,10 @@ public class PlayController {
     cargaPregunta();
   }
 
+  /**
+   * Método que carga la información de la pregunta en los 
+   * diferentes campos de texto de la vista.
+   */
   @FXML
   public void cargaPregunta() {
 
@@ -78,7 +82,11 @@ public class PlayController {
       close(null);
     }
   }
-
+  
+  /**
+   * Método que comprueba la respuesta de una pregunta
+   * @param event
+   */
   @FXML
   public void checkButton1(ActionEvent event) {
     if (preguntas.get(index).getRespuestas().get(0).isCorrecta()) {

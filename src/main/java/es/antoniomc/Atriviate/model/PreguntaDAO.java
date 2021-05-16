@@ -102,6 +102,9 @@ public class PreguntaDAO extends Pregunta implements IPreguntaDAO {
     return null;
   }
 
+  /**
+   * Método que guarda en la base de datos la pregunta, así como sus respuestas.
+   */
   @Override
   public int save() {
 
@@ -127,6 +130,11 @@ public class PreguntaDAO extends Pregunta implements IPreguntaDAO {
     return rs;
   }
   
+  /**
+   * Método que actualiza a una pregunta de la base de datos así como sus correspondientes 
+   * respuestas.
+   * @return
+   */
   public int update() {
     int rs = 0;
     Connection con = conexion.getConexion();

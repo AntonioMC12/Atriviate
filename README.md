@@ -33,19 +33,19 @@
 <br />
 <p align="center">
   <a href="https://github.com/ErTonix12/Atriviate">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo.png" alt="Logo" width="160" height="160">
   </a>
 
-  <h3 align="center">Atriviate</h3>
-  <h2 align="center">EN DESARROLLO</h2>
+  <h1 align="center">Atriviate</h1>
+
 
   <p align="center">
     Es una pequeña aplicación desarrollada en java, que se conecta a una base de datos MySQL y cuya interfaz gráfica está desarrollada con JavaFX
     <br />
-    <a href="https://github.com/ErTonix12/Atriviate"><strong>Explore the docs »</strong></a>
+    <a href="https://drive.google.com/file/d/1U8yCyXT1qgdzbAUa2i-hd-2fBYbiVee_/view?usp=sharing"><strong>« Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/ErTonix12/Atriviate">View Demo</a>
+    <a href="#usage">View Demo</a>
     ·
     <a href="https://github.com/ErTonix12/Atriviate/issues">Report Bug</a>
     ·
@@ -101,23 +101,21 @@ El diagrama de flujo sería el siguiente
 
 El diagrama de clases sería el siguiente
 
-  <a href="https://github.com/ErTonix12/Atriviate">
-    <img src="images/Class_Diagram.svg">
+  <a href="https://raw.githubusercontent.com/ErTonix12/Atriviate/b8ed83a71904a78bbb5596133c101d95887adc08/images/es.antoniomc.Atriviate.svg">
+    <img src="images/es.antoniomc.Atriviate.svg">
     <h6>Class Diagram</h6>
   </a>
 
 ### Built With
-Java with Maven
-* []()
-* []()
-* []()
-
-
+Proyecto desarrollado en Eclipse usando Maven.
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Aplicación en desarrollo, cuando se haga la primera versión quedará en el apartado correspondiente.
+Pequeña aplicación que permite la adminstración de usuarios, así como la gestión de preguntas (creación, modificación y borrado) de las mismas, permitiendo un juego simple de preguntas y respuestas. 
+
+Para más información, puedes consultar la documentación en el siguiente enlace: _[Documentation](https://drive.google.com/file/d/1U8yCyXT1qgdzbAUa2i-hd-2fBYbiVee_/view?usp=sharing)_
+
 
 ### Prerequisites
 
@@ -142,9 +140,52 @@ Java 1.8 o superior
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+El uso de la aplicación es muy intuitivo, en primer lugar, tenemos una pantalla de _Login_ en la que introduciremos nuestro usuario y contraseña en caso de que ya lo tengamos o pulsamos en _Crear Usuario_ para registrarnos.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+  <a>
+    <img src="images/login.png">
+    <h6>Pantalla de Login</h6>
+  </a>
+
+Una vez dentro del menú podemos observar varias opciones:
+
+  <a>
+    <img src="images/menu.png">
+    <h6>Pantalla del Menú</h6>
+  </a>
+
+Si hacemos click en el apartado de crear pregunta, se nos abrirá una pequeña ventana para que introduzcamos la información de la pregunta que vamos a crear. Esta consta de: El primer campo es una categoría, seguido de la pregunta y sus respuestas que para marcar cual o cuales son correctas, simplemente marcamos los CheckBoxs.
+
+  <a>
+    <img src="images/createPregunta.png">
+    <h6>Pantalla de creación de Pregunta</h6>
+  </a>
+
+El apartado de editar es muy parecido al anterior, en el cual nos encontramos un selector para seleccionar la pregunta de deseemos actualizar y simplemente sería actualizar los campos que requiramos y darle al botón de guardar.
+
+  <a>
+    <img src="images/edit.png">
+    <h6>Pantalla de edición de Pregunta</h6>
+  </a>
+
+El borrado de las preguntas no deseadas es de los más intuitivo, simplemente seleccionamos las pregunta deseada y pulsamos borrar.
+
+  <a>
+    <img src="images/delete.png">
+    <h6>Pantalla de borrado de Pregunta</h6>
+  </a>
+
+El botón de ranking simplente muestra los usuarios registrados con sus correspondiente puntuación.
+
+El apartado _Play_ es el juego en sí. Tendremos 5 vidas, que se irán restando conforme fallemos preguntas, en el momento que se agontes nuestas vidas, no podremos continuar y tendremos que empezar desde 0. Irán apareciendo preguntas de forma aleatoria.
+
+  <a>
+    <img src="images/play.png">
+    <h6>Pantalla de Play</h6>
+  </a>
+
+Una vez cerremos dicha pantalla todo se quedará guardado en la base de datos.
+
 
 
 
@@ -187,9 +228,8 @@ Project Link: [https://github.com/ErTonix12/Atriviate](https://github.com/ErToni
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* []()
-* []()
-* []()
+* [Miguel Ángel García Mérida](https://github.com/Abepuoh)
+
 
 
 

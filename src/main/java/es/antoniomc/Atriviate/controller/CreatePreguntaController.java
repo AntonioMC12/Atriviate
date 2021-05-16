@@ -43,7 +43,13 @@ public class CreatePreguntaController {
   @FXML
   public void initialize() {
   }
-
+  
+  /**
+   * Método que gestiona la creación de una pregunta, comprobando que los campos estén rellenos y haciendo un insert en la base 
+   * de datos tanto de la pregunta como de sus correspondientes respuestas.
+   * 
+   * @param event
+   */
   @FXML
   public void createPregunta(Event event) {
     if(checkFields()) {
@@ -71,6 +77,11 @@ public class CreatePreguntaController {
     }
   }
 
+  /**
+   * Método para la comprobación del correcto uso de los campos de texto.
+   * 
+   * @return true si están bien rellenos.
+   */
   @FXML
   public boolean checkFields() {
     return (!this.txtPreguntaCategoria.getText().trim().isEmpty() && !this.txtPreguntaTexto.getText().trim().isEmpty()
@@ -79,12 +90,22 @@ public class CreatePreguntaController {
         && checkCheckBox());
   }
 
+  /**
+   * Comprueba que las checkbox de las respuestas correctas, estén al menos 1 marcada.
+   * 
+   * @return boolean true si hay al meno 1 marcada.
+   */
   @FXML
   public boolean checkCheckBox() {
     return (this.checkRespuesta1.isSelected() || this.checkRespuesta2.isSelected() || this.checkRespuesta3.isSelected()
         || this.checkRespuesta4.isSelected());
   }
   
+  /**
+   * Método para mostra ventana de errores
+   * 
+   * @param text
+   */
   @FXML
   public void showError(String text) {
     Alert alert = new Alert(AlertType.ERROR);
@@ -95,6 +116,11 @@ public class CreatePreguntaController {
     alert.showAndWait();
   }
   
+  /**
+   * Método para mostrar una ventana con información
+   * 
+   * @param text
+   */
   @FXML
   public void showValid(String text) {
     Alert alert = new Alert(AlertType.INFORMATION);
@@ -105,6 +131,9 @@ public class CreatePreguntaController {
     alert.showAndWait();
   }
   
+  /**
+   * Método para limpiar el texto dentro de los diferentes campos.
+   */
   @FXML
   public void clearFields() {
     this.txtPreguntaCategoria.clear();

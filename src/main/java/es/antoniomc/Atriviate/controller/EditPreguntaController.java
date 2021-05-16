@@ -55,6 +55,9 @@ public class EditPreguntaController {
     this.saveButton.setDisable(true);
   }
   
+  /**
+   * Método que rellena los campos de texto con la información de la pregunta seleccionada en el ComboBox.
+   */
   @FXML
   public void comboSelect() {
     this.saveButton.setDisable(false);
@@ -73,6 +76,10 @@ public class EditPreguntaController {
     this.checkRespuesta4.setSelected(dummyrespuestas.get(3).isCorrecta());
   }
   
+  /**
+   * Método que se encarga de que la pregunta sea actualizada con la nueva información introducida.
+   * @param event
+   */
   @FXML
   public void updatePregunta(Event event) {
     if(checkFields()) {

@@ -27,11 +27,19 @@ public class DeletePreguntaController {
     this.deleteButton.setDisable(true);
   }
   
+  /**
+   * Método que activa el botón de borrar una vez seleccionada la pregunta deseada.
+   */
   @FXML
   public void comboSelect() {
     this.deleteButton.setDisable(false);
   }
   
+  /**
+   * Método para el correcto borrado de las preguntas, obteniendola de un combobox.
+   * 
+   * @param event
+   */
   @FXML
   public void deletePregunta(ActionEvent event) {
     if(this.comboPregunta.getValue()!=null) {

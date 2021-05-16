@@ -61,6 +61,13 @@ public class RespuestaDAO extends Respuesta implements IRespuestaDAO {
     }
   }
 
+  /**
+   * Método que devuelve una lista de respuestas según la respusta que 
+   * le hayamos pasado como parámetro.
+   * 
+   * @param id de la pregunta
+   * @return Lista de respuestas.
+   */
   public static List<Respuesta> getRespuestasByPregunta(double id) {
     List<Respuesta> respuestas = new ArrayList<>();
 
@@ -92,6 +99,9 @@ public class RespuestaDAO extends Respuesta implements IRespuestaDAO {
     return respuestas;
   }
 
+  /**
+   * Método para borrar una respuesta de la base de datos
+   */
   @Override
   public int deleteRespuesta() {
     int deleteRespuesta = -1;
@@ -112,6 +122,9 @@ public class RespuestaDAO extends Respuesta implements IRespuestaDAO {
     return deleteRespuesta;
   }
 
+  /**
+   * Método para guardas las respuestas en la base de datos.
+   */
   @Override
   public int save() {
     int save = -1;

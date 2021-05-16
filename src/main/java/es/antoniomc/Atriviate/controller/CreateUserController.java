@@ -30,6 +30,13 @@ public class CreateUserController {
   public void initialize() {
   }
 
+  /**
+   * Método que gestiona la correcta insercción de un Usuario en la base de datos.
+   * Comprueba que no se repitan tanto el ID como el Nombre, encriptando la contraseña
+   * introducida e insertandolo en la base de datos.
+   * 
+   * @param event
+   */
   @FXML
   public void createUser(ActionEvent event) {
     
